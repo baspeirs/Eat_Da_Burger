@@ -17,10 +17,12 @@ const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+app.use(express.static("public"))
+
 // Import routes and give the server access to them.
-//const routes = require(""); // ===== use this to require controller files // make sure to get the path right ======
+const routes = require("./controllers/burgControl"); // ===== use this to require controller files // make sure to get the path right ======
 // use the controller files
-//app.use(routes);
+app.use(routes);
 
 // require our orm file ---- orm will do the connection to the database
 const orm = require("./config/orm")
