@@ -1,0 +1,55 @@
+/* full page edits */
+
+body {
+    background-image: url("../images/michael-wave-G3tRHpENRTs-unsplash.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    color: hsl(51, 100%, 50%);
+    font-family: fantasy;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(255, 217, 0);
+    font-family: serif;
+}
+p {
+    background-color: tomato;
+    padding: 5px;
+    border: black 2px;
+    border-style: outset;
+    text-align: center;
+    font-family: serif;
+    font-weight: bold;
+}
+
+/* want to try css */
+
+
+/* devoured css */
+
+
+/* add burger */
+#submit-text {
+    color: rgb(255, 217, 0);
+    font-size: 24px;
+    font-family: serif;
+}
+
+#add-burg-button {
+    width: 200px;
+    height: 50px;
+    /* margin-top: 25px; */
+}
+
+#add-burg-section {
+    margin: 20px;
+}

@@ -1,41 +1,58 @@
 <h1>Eat Dem Burgers!</h1>
 
-<h2>Want to try</h2>
+<article class="container">
+  <section class="row">
+    <div class="col-6">
+      <h2>Want to try</h2>
+          {{#each burgers}}
+            {{#unless devoured}}
+                  <div class="row">
+                    <div class="col-8">
+                      <p><span class="label">{{this.burger_name}}</span></p>
+                    </div>
+                    <div class="col-4">
+                      <button data-id="{{this.id}}" data-devoured="{{this.devoured}}" class="devour-burg">Devour!</button>
+                    </div>
+                  </div>
+            {{/unless}}
+          {{/each}}
+    </div>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      	<li>
-            <p><span class="label">ID:</span> {{this.id}}</p>
-            <p><span class="label">Burger:</span> {{this.burger_name}}</p>
+    <div class="col-6">
+      <h2>Devoured</h2>
+          {{#each burgers}}
+            {{#if devoured}}
+              <div class="row">
+                <div class="col-8">
+                  <p><span class="label"> {{this.burger_name}}</span></p>
+                </div>
+                <div class="col-4">
+                  <button data-id="{{this.id}}" class="delquote">Delete</button>
+                </div>
+              </div>
+            {{/if}}
+          {{/each}}
+    </div>
 
-            <button data-id="{{this.id}}" data-devoured="{{this.devoured}}" class="devour-burg">Devour!</button>
-        </li>
-    {{/unless}}
-  {{/each}}
-</ul>
+  </section>
 
-<h2>Devoured</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-        <li>
-            <p><span class="label">Burger:</span> {{this.burger_name}}</p>
-
-            {{!-- <button data-id="{{this.id}}" class="delquote">Delete</button> --}}
-        </li>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+  <section class="row" id="add-burg-section">
+    <div class="col-12">
+      <h2>Add a Burger</h2>
+      
+        <form class="row create-form">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="ca" id="submit-text">Burger Name:</label>
+              <input type="text" id="ca" name="name">
+            </div>
+          </div>
+          <div class="col-8">
+            <button type="submit" id="add-burg-button">Add Burger</button>
+          </div>
+        </form>
+      
+      
+    </div>
+  </section>
+</article>
