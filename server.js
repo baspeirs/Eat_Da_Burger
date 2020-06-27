@@ -24,6 +24,8 @@ const routes = require("./controllers/burgControl");
 // use the controller files
 app.use(routes);
 
+app.get("/", routes)
+
 // require our orm file ---- orm will do the connection to the database
 const orm = require("./config/orm")
 
