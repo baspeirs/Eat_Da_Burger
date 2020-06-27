@@ -8,9 +8,8 @@
       	<li>
             <p><span class="label">ID:</span> {{this.id}}</p>
             <p><span class="label">Burger:</span> {{this.burger_name}}</p>
-            <p><span class="label">Devoured?:</span> {{this.devoured}}</p>
 
-            <button data-id="{{this.id}}" class="delquote">Delete</button>
+            <button data-id="{{this.id}}" data-devoured="{{this.devoured}}" class="devour-burg">Devour!</button>
         </li>
     {{/unless}}
   {{/each}}
@@ -22,13 +21,9 @@
   {{#each burgers}}
     {{#if devoured}}
         <li>
-            <p><span class="label">ID:</span> {{this.id}}</p>
             <p><span class="label">Burger:</span> {{this.burger_name}}</p>
-            <p><span class="label">Devoured?:</span> {{this.devoured}}</p>
 
-            <button data-id="{{this.id}}" class="delquote">Delete</button>
-
-            <a href="/{{this.id}}">Update this quote</a>
+            {{!-- <button data-id="{{this.id}}" class="delquote">Delete</button> --}}
         </li>
     {{/if}}
   {{/each}}

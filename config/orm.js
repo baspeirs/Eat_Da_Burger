@@ -63,9 +63,13 @@ const orm = {
         cb(result);
       });
     },
-    updateOne: (tableInput, col1, val1, col2, val2, id, cb) => {
-      const queryString = "UPDATE " + tableInput + " SET ?? = ?, ?? = ? WHERE id = ??"
-      connection.query(queryString, [col1, val1, col2, val2, id], function(err, result) {
+    updateOne: (tableInput, objColVals, condition, cb) => {
+      let queryString = "UPDATE " + tableInput; //+ tableInput + " SET ?? = ?, ?? = ? WHERE id = ??"
+      queryString += " SET ";
+      queryString += objToSql(objColVals);
+      queryString += " WHERE ";
+      queryString += condition
+      connection.query(queryString, function(err, result) {
           if (err) throw err;
           cb(result);
         }
