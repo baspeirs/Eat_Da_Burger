@@ -19,6 +19,10 @@ app.set("view engine", "handlebars");
 
 app.use(express.static("public"))
 
+app.get("/", function(req, res) {
+  res.json(path.join(__dirname, "public/index.html"));
+});
+
 // Import routes and give the server access to them.
 const routes = require("./controllers/burgControl"); // ===== use this to require controller files // make sure to get the path right ======
 // use the controller files
