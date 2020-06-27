@@ -20,7 +20,7 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"))
 
 app.get("/", function(req, res) {
-  res.json(path.join(__dirname, "public/index.html"));
+  res.json(path.join(__dirname, "views/layouts/main.handlebars"));
 });
 
 // Import routes and give the server access to them.
