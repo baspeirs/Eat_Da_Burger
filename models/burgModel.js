@@ -12,6 +12,10 @@ var burger = {
 
     updateOne: (col1, val1, col2, val2, id, cb) => {
         orm.updateOne("burgers", col1, val1, col2, val2, id, (res) => cb(res))
+    },
+
+    deleteOne: (id, cb) => {
+        orm.deleteOne("burgers", id, (res) => cb(res))
     }
 }
 

@@ -44,18 +44,19 @@ $(function() {
       );
     });
   
-    // $(".delete-class").on("click", function(event) {
-    //   var id = $(this).data("id");
+    $(".delquote").on("click", function(event) {
+      event.preventDefault();
+      const id = $(this).data("id");
   
-    //   // Send the PUT request.
-    //   $.ajax("/api/cats/" + id, {
-    //     type: "DELETE",
-    //   }).then(
-    //     function() {
-    //       console.log("Deleted Cat ", id);
-    //       // Reload the page to get the updated list
-    //       location.reload();
-    //     }
-    //   );
-    // });
+      // Send the PUT request.
+      $.ajax("/api/burgers/" + id, {
+        type: "DELETE",
+      }).then(
+        function() {
+          console.log("Deleted Burger ", id);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
   });

@@ -49,8 +49,9 @@ const orm = {
         cb(result);
       });
     },
+
     insertOne: (tableInput, cols, vals, cb) => {
-      let queryString = "INSERT INTO " + tableInput // " (??, ??) VALUES (?, ?);";
+      let queryString = "INSERT INTO " + tableInput;
       queryString += " (";
       queryString += cols.toString();
       queryString += ") ";
@@ -63,6 +64,7 @@ const orm = {
         cb(result);
       });
     },
+
     updateOne: (tableInput, objColVals, condition, cb) => {
       let queryString = "UPDATE " + tableInput; //+ tableInput + " SET ?? = ?, ?? = ? WHERE id = ??"
       queryString += " SET ";
@@ -74,6 +76,16 @@ const orm = {
           cb(result);
         }
       );
+    },
+
+    deleteOne: (tableInput, condition, cb) => {
+      let queryString = "DELETE FROM " + tableInput;
+      queryString += " WHERE ";
+      queryString += condition;
+      connection.query(queryString, (err, result) => {
+        if (err) throw err;
+        cb(result)
+      })
     }
   };
   

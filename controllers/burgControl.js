@@ -1,5 +1,6 @@
 const express = require("express");
 const burger = require("../models/burgModel");
+const connection = require("../config/connection");
 
 const router = express.Router();
 
@@ -23,19 +24,22 @@ router.post("/api/burgers", (req, res) => {
 router.put("/api/burgers/:id", (req, res) => {
   const condition = "id = " + req.params.id;
 
-  console.log(condition + " = condition");
+  burger.updateOne({devoured: req.body.devoured}, condition, result => {
+      if (result.affectedRows === 0) return res.status(404).end();
 
-  burger.updateOne(
-    {
-      devoured: req.body.devoured
-    },
-    condition,
-    result => {
-      if (result.changedRows === 0) {
-        return res.status(404).end();
-      }
       res.status(200).end();
     }
   );
 });
+
+router.delete("/api/burgers/:id", (req, res) => {
+  const condition = "id = " + req.params.id;
+
+  burger.deleteOne(condition, result => {
+    console.log(result)
+    if (result.affectedRows === 0) return res.status(404).end();
+
+    res.status(200).end();
+  })
+})
   module.exports = router;
