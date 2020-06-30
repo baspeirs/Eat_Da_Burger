@@ -1,9 +1,7 @@
 /* full page edits */
 
 body {
-    background-image: url("../images/michael-wave-G3tRHpENRTs-unsplash.jpg");
-    background-repeat: no-repeat, repeat;
-    background-position: center;
+    background: url("../images/michael-wave-G3tRHpENRTs-unsplash.jpg") no-repeat center center fixed;
     background-size: cover;
     min-height: 100%;
     display: flex;
