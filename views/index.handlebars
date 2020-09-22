@@ -14,7 +14,7 @@
             </div>
           </div>
           <div class="col-3">
-            <button type="submit" id="add-burg-button">Add Burger</button>
+            <button type="button" id="add-burg-button" class="btn btn-success">Add Burger</button>
           </div>
           <div class="col-3"></div>
         </form>
@@ -33,7 +33,7 @@
                       <span class="label"><p class="try-burger">{{this.burger_name}}</p></span>
                     </div>
                     <div class="col-4">
-                      <button data-id="{{this.id}}" data-devoured="{{this.devoured}}" class="devour-burg">Devour!</button>
+                      <button data-id="{{this.id}}" data-devoured="{{this.devoured}}" class="devour-burg btn btn-success">Devour!</button>
                     </div>
                   </div>
             {{/unless}}
@@ -49,7 +49,7 @@
                   <span class="label"><p class="favorites">{{this.burger_name}}</p></span>
                 </div>
                 <div class="col-4">
-                  <button data-id="{{this.id}}" class="del-quote">Delete</button>
+                  <button data-id="{{this.id}}" class="del-quote btn btn-danger">Delete</button>
                 </div>
               </div>
             {{/if}}
