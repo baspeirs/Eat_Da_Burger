@@ -1,8 +1,30 @@
 <h1>Eat Dem Burgers!</h1>
 
 <article class="container">
+   <section class="row" id="add-burg-section">
+    <div class="col-12">
+      <h2>Add a Burger</h2>
+      
+        <form class="row create-form">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="ca" id="submit-text">Burger Name:</label>
+              <input type="text" id="ca" name="name">
+            </div>
+          </div>
+          <div class="col-3">
+            <button type="submit" id="add-burg-button">Add Burger</button>
+          </div>
+          <div class="col-3"></div>
+        </form>
+      
+      
+    </div>
+  </section>
+
   <section class="row">
-    <div class="col-6">
+    <div class="col-md-6">
       <h2>Want to try</h2>
           {{#each burgers}}
             {{#unless devoured}}
@@ -18,41 +40,21 @@
           {{/each}}
     </div>
 
-    <div class="col-6">
-      <h2>Devoured</h2>
+    <div class="col-md-6">
+      <h2>Favorites</h2>
           {{#each burgers}}
             {{#if devoured}}
               <div class="row">
                 <div class="col-8">
-                  <p><span class="label"> {{this.burger_name}}</span></p>
+                  <span class="label"><p class="favorites">{{this.burger_name}}</p></span>
                 </div>
                 <div class="col-4">
-                  <button data-id="{{this.id}}" class="delquote">Delete</button>
+                  <button data-id="{{this.id}}" class="del-quote">Delete</button>
                 </div>
               </div>
             {{/if}}
           {{/each}}
     </div>
 
-  </section>
-
-  <section class="row" id="add-burg-section">
-    <div class="col-12">
-      <h2>Add a Burger</h2>
-      
-        <form class="row create-form">
-          <div class="col-4">
-            <div class="form-group">
-              <label for="ca" id="submit-text">Burger Name:</label>
-              <input type="text" id="ca" name="name">
-            </div>
-          </div>
-          <div class="col-8">
-            <button type="submit" id="add-burg-button">Add Burger</button>
-          </div>
-        </form>
-      
-      
-    </div>
   </section>
 </article>

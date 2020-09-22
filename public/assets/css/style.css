@@ -57,7 +57,31 @@ h2 {
 }
 
 /* devoured css */
+.favorites {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+    background-color: tomato;
+    padding: 5px;
+    text-align: center;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 24px;
+}
 
+.del-quote{
+    border-radius: 5px;
+    border-style: none;
+    height: 50px;
+    width: 100px;
+    background-color: rgb(11, 194, 11);
+    padding: 5px;
+    text-align: center;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 24px;
+}
 
 /* add burger */
 #submit-text {
